@@ -10,10 +10,10 @@ ISPTOOL	   = avrispmkii
 ISPPORT	   = usb
 ISPSPEED   = -b 115200
 
-DIRAVR = ../../tools/avr/
+#DIRAVR = ../../tools/avr/
 #DIRAVR = /usr/local/avrtod
 #DIRAVR = /usr/local/AVRMacPack
-DIRAVRBIN = $(DIRAVR)/bin
+DIRAVRBIN = /usr/bin
 DIRAVRUTILS = $(DIRAVR)/utils/bin
 DIRINC = $(DIRAVR)/include
 DIRLIB = $(DIRAVR)/avr/lib
@@ -30,8 +30,8 @@ ISPFLASH    = avrdude -c $(ISPTOOL) -p $(MCU) -P $(ISPPORT) $(ISPSPEED) -U flash
 
 
 OBJ        = $(PROGRAM).o
-#OPTIMIZE   = -Os
-OPTIMIZE   = -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -fno-split-wide-types -Wl,--relax -fno-inline-small-functions -mcall-prologues
+OPTIMIZE   = -Os
+#OPTIMIZE   = -Os -funsigned-char -funsigned-bitfields -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -fno-split-wide-types -Wl,--relax -fno-inline-small-functions -mcall-prologues
 #OPTIMIZE   = -Os -fdata-sections -fpack-struct -Wl,--relax  -fno-inline-small-functions -mcall-prologues
 
 DEFS       = -DF_CPU=8000000 -DBAUD_RATE=38400
