@@ -1,0 +1,22 @@
+minimal arduino from http://todbot.com/blog/2009/05/26/minimal-arduino-with-atmega8/
+
+Burn the bootloader using make isp, then add this to boards.txt, after that you can program the arduino.
+
+##############################################################
+
+atmega8noxtal.name=ATmega8-noxtal @8MHz
+
+atmega8noxtal.upload.protocol=arduino
+atmega8noxtal.upload.maximum_size=7168
+atmega8noxtal.upload.speed=38400
+
+atmega8noxtal.bootloader.low_fuses=0xe4
+atmega8noxtal.bootloader.high_fuses=0xc4
+atmega8noxtal.bootloader.path=atmega8_noxtal
+atmega8noxtal.bootloader.file=ATmegaBOOT.hex
+atmega8noxtal.bootloader.unlock_bits=0x3F
+atmega8noxtal.bootloader.lock_bits=0x0F
+
+atmega8noxtal.build.mcu=atmega8
+atmega8noxtal.build.f_cpu=8000000L
+atmega8noxtal.build.core=arduino
