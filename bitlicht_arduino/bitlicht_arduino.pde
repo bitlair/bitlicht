@@ -10,12 +10,16 @@ void setup()
            (0 << FOC1A)  | (0 << FOC1B)  | (1 << WGM11)  | (0 << WGM10);
   TCCR1B = (0 << ICNC1)  | (0 << ICES1)  | (1 << WGM13)  | (0 << WGM12)  |
            (0 << CS12)   | (1 << CS11)   | (0 << CS10);
-  ICR1 = 4095; //12 bit pwm
+  ICR1 = 4080; //12 bit pwm (almost)
 
   //set up timer2
   TCCR2 = (0 << FOC2)  | (1 << WGM20) | (1 << COM21) | (1 << COM20) |
           (0 << WGM21) | (0 << CS22)  | (1 << CS21)  | (0 << CS20);
   TIMSK |= (1 << TOIE2) | (0 << OCIE2);
+
+  TCNT0 = 0;
+  TCNT1 = 0;
+
   sei();
 
   Serial.begin(115200);
@@ -39,7 +43,7 @@ ISR(TIMER2_OVF_vect)
   else
   {
     OCR2 = 255;
-    outval -= 256;
+    outval -= 255;
   }
 
   if (hasnewval)
