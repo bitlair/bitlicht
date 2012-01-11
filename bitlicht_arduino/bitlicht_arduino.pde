@@ -156,6 +156,12 @@ void WriteRGB(uint16_t r, uint16_t g, uint16_t b)
 
 void WriteRGBasync(uint16_t r, uint16_t g, uint16_t b)
 {
+  if (r > 4080)
+    r = 4080;
+  if (g > 4080)
+    g = 4080;
+  if (b > 4080)
+    b = 4080;
   newval = r;
   hasnewval = true;
   OCR1B  = g;
