@@ -136,6 +136,16 @@ int main(void)
 
   asm volatile("nop\n\t");
 
+  //set up PB7 as input
+  cbi(DDRB, PINB7);
+  //enable PB7 internal pullup
+  sbi(PORTB, PINB7); 
+  //give the pin some time to rise
+  _delay_loop_2(65535);
+  //if PB7 is high, start the app now
+  if (bit_is_set(PINB, PINB7))
+    app_start();
+
   /* check if flash is programmed already, if not start bootloader anyway */
   //if(pgm_read_byte_near(0x0000) != 0xFF) {
 
@@ -166,11 +176,11 @@ int main(void)
   //time_count=0;
 
   /* set LED pin as output */
-  sbi(LED_DDR,LED);
+  /*sbi(LED_DDR,LED);
 	for (i = 0; i < 16; i++) {
 		outb(LED_PORT, inb(LED_PORT) ^ _BV(LED));
 		_delay_loop_2(0);
-	}
+	}*/
 	
 	//for (l=0; l<40000000; l++)
 		//outb(LED_PORT, inb(LED_PORT) ^= _BV(LED));

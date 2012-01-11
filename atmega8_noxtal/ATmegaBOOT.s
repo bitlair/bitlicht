@@ -91,13 +91,13 @@ __zero_reg__ = 1
 	.stabs	"address_union:T(0,16)=u2word:(3,4),0,16;byte:(0,17)=ar(0,18)=r(0,18);0;0177777;;0;1;(3,2),0,16;;",128,0,0,0
 	.stabs	"length_union:T(0,19)=u2word:(3,4),0,16;byte:(0,17),0,16;;",128,0,0,0
 	.stabs	"flags_struct:T(0,20)=s1eeprom:(0,4),0,1;rampz:(0,4),1,1;;",128,0,0,0
-	.stabs	"putch:F(0,15)",36,0,457,putch
-	.stabs	"ch:P(0,2)",64,0,457,24
+	.stabs	"putch:F(0,15)",36,0,467,putch
+	.stabs	"ch:P(0,2)",64,0,467,24
 .global	putch
 	.type	putch, @function
 putch:
 	.stabd	46,0,0
-	.stabn	68,0,458,.LM0-.LFBB1
+	.stabn	68,0,468,.LM0-.LFBB1
 .LM0:
 .LFBB1:
 /* prologue: function */
@@ -105,27 +105,27 @@ putch:
 /* stack size = 0 */
 .L__stack_usage = 0
 .L2:
-	.stabn	68,0,460,.LM1-.LFBB1
+	.stabn	68,0,470,.LM1-.LFBB1
 .LM1:
 	sbis 43-32,5
 	rjmp .L2
-	.stabn	68,0,461,.LM2-.LFBB1
+	.stabn	68,0,471,.LM2-.LFBB1
 .LM2:
 	out 44-32,r24
 /* epilogue start */
-	.stabn	68,0,462,.LM3-.LFBB1
+	.stabn	68,0,472,.LM3-.LFBB1
 .LM3:
 	ret
 	.size	putch, .-putch
 .Lscope1:
 	.stabs	"",36,0,0,.Lscope1-.LFBB1
 	.stabd	78,0,0
-	.stabs	"getch:F(0,2)",36,0,464,getch
+	.stabs	"getch:F(0,2)",36,0,474,getch
 .global	getch
 	.type	getch, @function
 getch:
 	.stabd	46,0,0
-	.stabn	68,0,465,.LM4-.LFBB2
+	.stabn	68,0,475,.LM4-.LFBB2
 .LM4:
 .LFBB2:
 	push r14
@@ -136,23 +136,23 @@ getch:
 /* frame size = 0 */
 /* stack size = 4 */
 .L__stack_usage = 4
-	.stabn	68,0,467,.LM5-.LFBB2
+	.stabn	68,0,477,.LM5-.LFBB2
 .LM5:
 	clr r14
 	clr r15
 	movw r16,r14
-	.stabn	68,0,468,.LM6-.LFBB2
+	.stabn	68,0,478,.LM6-.LFBB2
 .LM6:
 	rjmp .L10
 .L7:
-	.stabn	68,0,470,.LM7-.LFBB2
+	.stabn	68,0,480,.LM7-.LFBB2
 .LM7:
 	sec
 	adc r14,__zero_reg__
 	adc r15,__zero_reg__
 	adc r16,__zero_reg__
 	adc r17,__zero_reg__
-	.stabn	68,0,471,.LM8-.LFBB2
+	.stabn	68,0,481,.LM8-.LFBB2
 .LM8:
 	ldi r24,lo8(2000001)
 	cp r14,r24
@@ -163,21 +163,21 @@ getch:
 	ldi r24,hhi8(2000001)
 	cpc r17,r24
 	brlo .L10
-	.stabn	68,0,472,.LM9-.LFBB2
+	.stabn	68,0,482,.LM9-.LFBB2
 .LM9:
 	lds r30,app_start
 	lds r31,app_start+1
 	icall
 .L10:
-	.stabn	68,0,468,.LM10-.LFBB2
+	.stabn	68,0,478,.LM10-.LFBB2
 .LM10:
 	sbis 43-32,7
 	rjmp .L7
-	.stabn	68,0,474,.LM11-.LFBB2
+	.stabn	68,0,484,.LM11-.LFBB2
 .LM11:
 	in r24,44-32
 /* epilogue start */
-	.stabn	68,0,475,.LM12-.LFBB2
+	.stabn	68,0,485,.LM12-.LFBB2
 .LM12:
 	pop r17
 	pop r16
@@ -185,19 +185,19 @@ getch:
 	pop r14
 	ret
 	.size	getch, .-getch
-	.stabs	"count:r(3,6)",64,0,467,14
+	.stabs	"count:r(3,6)",64,0,477,14
 	.stabn	192,0,0,.LFBB2-.LFBB2
 	.stabn	224,0,0,.Lscope2-.LFBB2
 .Lscope2:
 	.stabs	"",36,0,0,.Lscope2-.LFBB2
 	.stabd	78,0,0
-	.stabs	"getNch:F(0,15)",36,0,477,getNch
-	.stabs	"count:P(3,2)",64,0,477,16
+	.stabs	"getNch:F(0,15)",36,0,487,getNch
+	.stabs	"count:P(3,2)",64,0,487,16
 .global	getNch
 	.type	getNch, @function
 getNch:
 	.stabd	46,0,0
-	.stabn	68,0,478,.LM13-.LFBB3
+	.stabn	68,0,488,.LM13-.LFBB3
 .LM13:
 .LFBB3:
 	push r16
@@ -207,42 +207,42 @@ getNch:
 /* stack size = 2 */
 .L__stack_usage = 2
 	mov r16,r24
-	.stabn	68,0,480,.LM14-.LFBB3
+	.stabn	68,0,490,.LM14-.LFBB3
 .LM14:
 	ldi r17,lo8(0)
 	rjmp .L12
 .L13:
-	.stabn	68,0,484,.LM15-.LFBB3
+	.stabn	68,0,494,.LM15-.LFBB3
 .LM15:
 	rcall getch
-	.stabn	68,0,480,.LM16-.LFBB3
+	.stabn	68,0,490,.LM16-.LFBB3
 .LM16:
 	subi r17,lo8(-(1))
 .L12:
-	.stabn	68,0,480,.LM17-.LFBB3
+	.stabn	68,0,490,.LM17-.LFBB3
 .LM17:
 	cp r17,r16
 	brlo .L13
 /* epilogue start */
-	.stabn	68,0,486,.LM18-.LFBB3
+	.stabn	68,0,496,.LM18-.LFBB3
 .LM18:
 	pop r17
 	pop r16
 	ret
 	.size	getNch, .-getNch
-	.stabs	"i:r(3,2)",64,0,479,17
+	.stabs	"i:r(3,2)",64,0,489,17
 	.stabn	192,0,0,.LFBB3-.LFBB3
 	.stabn	224,0,0,.Lscope3-.LFBB3
 .Lscope3:
 	.stabs	"",36,0,0,.Lscope3-.LFBB3
 	.stabd	78,0,0
-	.stabs	"byte_response:F(0,15)",36,0,488,byte_response
-	.stabs	"val:P(3,2)",64,0,488,17
+	.stabs	"byte_response:F(0,15)",36,0,498,byte_response
+	.stabs	"val:P(3,2)",64,0,498,17
 .global	byte_response
 	.type	byte_response, @function
 byte_response:
 	.stabd	46,0,0
-	.stabn	68,0,489,.LM19-.LFBB4
+	.stabn	68,0,499,.LM19-.LFBB4
 .LM19:
 .LFBB4:
 	push r17
@@ -251,26 +251,26 @@ byte_response:
 /* stack size = 1 */
 .L__stack_usage = 1
 	mov r17,r24
-	.stabn	68,0,490,.LM20-.LFBB4
+	.stabn	68,0,500,.LM20-.LFBB4
 .LM20:
 	rcall getch
 	cpi r24,lo8(32)
 	brne .L14
-	.stabn	68,0,491,.LM21-.LFBB4
+	.stabn	68,0,501,.LM21-.LFBB4
 .LM21:
 	ldi r24,lo8(20)
 	rcall putch
-	.stabn	68,0,492,.LM22-.LFBB4
+	.stabn	68,0,502,.LM22-.LFBB4
 .LM22:
 	mov r24,r17
 	rcall putch
-	.stabn	68,0,493,.LM23-.LFBB4
+	.stabn	68,0,503,.LM23-.LFBB4
 .LM23:
 	ldi r24,lo8(16)
 	rcall putch
 .L14:
 /* epilogue start */
-	.stabn	68,0,495,.LM24-.LFBB4
+	.stabn	68,0,505,.LM24-.LFBB4
 .LM24:
 	pop r17
 	ret
@@ -278,28 +278,28 @@ byte_response:
 .Lscope4:
 	.stabs	"",36,0,0,.Lscope4-.LFBB4
 	.stabd	78,0,0
-	.stabs	"nothing_response:F(0,15)",36,0,497,nothing_response
+	.stabs	"nothing_response:F(0,15)",36,0,507,nothing_response
 .global	nothing_response
 	.type	nothing_response, @function
 nothing_response:
 	.stabd	46,0,0
-	.stabn	68,0,498,.LM25-.LFBB5
+	.stabn	68,0,508,.LM25-.LFBB5
 .LM25:
 .LFBB5:
 /* prologue: function */
 /* frame size = 0 */
 /* stack size = 0 */
 .L__stack_usage = 0
-	.stabn	68,0,499,.LM26-.LFBB5
+	.stabn	68,0,509,.LM26-.LFBB5
 .LM26:
 	rcall getch
 	cpi r24,lo8(32)
 	brne .L16
-	.stabn	68,0,500,.LM27-.LFBB5
+	.stabn	68,0,510,.LM27-.LFBB5
 .LM27:
 	ldi r24,lo8(20)
 	rcall putch
-	.stabn	68,0,501,.LM28-.LFBB5
+	.stabn	68,0,511,.LM28-.LFBB5
 .LM28:
 	ldi r24,lo8(16)
 	rcall putch
@@ -336,358 +336,339 @@ main:
 	nop
 	
  ;  0 "" 2
-	.stabn	68,0,148,.LM31-.LFBB6
+	.stabn	68,0,140,.LM31-.LFBB6
 .LM31:
 /* #NOAPP */
-	out 64-32,__zero_reg__
-	.stabn	68,0,149,.LM32-.LFBB6
+	cbi 55-32,7
+	.stabn	68,0,142,.LM32-.LFBB6
 .LM32:
-	ldi r24,lo8(12)
-	out 41-32,r24
-	.stabn	68,0,150,.LM33-.LFBB6
-.LM33:
-	ldi r24,lo8(24)
-	out 42-32,r24
-	.stabn	68,0,151,.LM34-.LFBB6
-.LM34:
-	ldi r24,lo8(-122)
-	out 64-32,r24
-	.stabn	68,0,169,.LM35-.LFBB6
-.LM35:
-	sbi 55-32,5
-	.stabn	68,0,170,.LM36-.LFBB6
-.LM36:
-	sts i,__zero_reg__
-	.stabn	68,0,171,.LM37-.LFBB6
-.LM37:
-	ldi r21,lo8(32)
+	sbi 56-32,7
 	.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay_basic.h",132,0,0,.Ltext1
 .Ltext1:
-	.stabn	68,0,105,.LM38-.LFBB6
-.LM38:
-	ldi r18,lo8(0)
-	ldi r19,hi8(0)
-	.stabs	"ATmegaBOOT.c",132,0,0,.Ltext2
-.Ltext2:
-	.stabn	68,0,170,.LM39-.LFBB6
-.LM39:
-	rjmp .L19
-.L20:
-	.stabn	68,0,171,.LM40-.LFBB6
-.LM40:
-	in r24,56-32
-	eor r24,r21
-	out 56-32,r24
-	.stabs	"/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay_basic.h",132,0,0,.Ltext3
-.Ltext3:
-	.stabn	68,0,105,.LM41-.LFBB6
-.LM41:
-	movw r24,r18
+	.stabn	68,0,105,.LM33-.LFBB6
+.LM33:
+	ldi r24,lo8(-1)
+	ldi r25,hi8(-1)
 /* #APP */
  ;  105 "/usr/lib/gcc/avr/4.5.3/../../../avr/include/util/delay_basic.h" 1
 	1: sbiw r24,1
 	brne 1b
  ;  0 "" 2
-	.stabs	"ATmegaBOOT.c",132,0,0,.Ltext4
-.Ltext4:
-	.stabn	68,0,170,.LM42-.LFBB6
-.LM42:
+	.stabs	"ATmegaBOOT.c",132,0,0,.Ltext2
+.Ltext2:
+	.stabn	68,0,146,.LM34-.LFBB6
+.LM34:
 /* #NOAPP */
-	subi r20,lo8(-(1))
-	sts i,r20
+	sbis 54-32,7
+	rjmp .L19
+	.stabn	68,0,147,.LM35-.LFBB6
+.LM35:
+	lds r30,app_start
+	lds r31,app_start+1
+	icall
 .L19:
-	.stabn	68,0,170,.LM43-.LFBB6
-.LM43:
-	lds r20,i
-	cpi r20,lo8(16)
-	brlo .L20
-.L60:
-	.stabn	68,0,193,.LM44-.LFBB6
-.LM44:
+	.stabn	68,0,158,.LM36-.LFBB6
+.LM36:
+	out 64-32,__zero_reg__
+	.stabn	68,0,159,.LM37-.LFBB6
+.LM37:
+	ldi r24,lo8(12)
+	out 41-32,r24
+	.stabn	68,0,160,.LM38-.LFBB6
+.LM38:
+	ldi r24,lo8(24)
+	out 42-32,r24
+	.stabn	68,0,161,.LM39-.LFBB6
+.LM39:
+	ldi r24,lo8(-122)
+	out 64-32,r24
+.L59:
+	.stabn	68,0,203,.LM40-.LFBB6
+.LM40:
 	rcall getch
-	.stabn	68,0,198,.LM45-.LFBB6
-.LM45:
+	.stabn	68,0,208,.LM41-.LFBB6
+.LM41:
 	cpi r24,lo8(48)
-	breq .L64
-.L22:
-	.stabn	68,0,205,.LM46-.LFBB6
-.LM46:
+	breq .L63
+.L21:
+	.stabn	68,0,215,.LM42-.LFBB6
+.LM42:
 	cpi r24,lo8(49)
-	brne .L24
-	.stabn	68,0,206,.LM47-.LFBB6
-.LM47:
+	brne .L23
+	.stabn	68,0,216,.LM43-.LFBB6
+.LM43:
 	rcall getch
 	cpi r24,lo8(32)
-	brne .L60
-	.stabn	68,0,207,.LM48-.LFBB6
-.LM48:
+	brne .L59
+	.stabn	68,0,217,.LM44-.LFBB6
+.LM44:
 	ldi r24,lo8(20)
 	rcall putch
-	.stabn	68,0,208,.LM49-.LFBB6
-.LM49:
+	.stabn	68,0,218,.LM45-.LFBB6
+.LM45:
 	ldi r24,lo8(65)
 	rcall putch
-	.stabn	68,0,209,.LM50-.LFBB6
-.LM50:
+	.stabn	68,0,219,.LM46-.LFBB6
+.LM46:
 	ldi r24,lo8(86)
 	rcall putch
-	.stabn	68,0,210,.LM51-.LFBB6
-.LM51:
+	.stabn	68,0,220,.LM47-.LFBB6
+.LM47:
 	ldi r24,lo8(82)
 	rcall putch
-	.stabn	68,0,211,.LM52-.LFBB6
-.LM52:
+	.stabn	68,0,221,.LM48-.LFBB6
+.LM48:
 	ldi r24,lo8(32)
 	rcall putch
-	.stabn	68,0,212,.LM53-.LFBB6
-.LM53:
+	.stabn	68,0,222,.LM49-.LFBB6
+.LM49:
 	ldi r24,lo8(73)
 	rcall putch
-	.stabn	68,0,213,.LM54-.LFBB6
-.LM54:
+	.stabn	68,0,223,.LM50-.LFBB6
+.LM50:
 	ldi r24,lo8(83)
 	rcall putch
-	.stabn	68,0,214,.LM55-.LFBB6
-.LM55:
+	.stabn	68,0,224,.LM51-.LFBB6
+.LM51:
 	ldi r24,lo8(80)
-	rjmp .L62
-.L24:
-	.stabn	68,0,220,.LM56-.LFBB6
-.LM56:
+	rjmp .L61
+.L23:
+	.stabn	68,0,230,.LM52-.LFBB6
+.LM52:
 	cpi r24,lo8(64)
-	brne .L25
-	.stabn	68,0,221,.LM57-.LFBB6
+	brne .L24
+	.stabn	68,0,231,.LM53-.LFBB6
+.LM53:
+	rcall getch
+	.stabn	68,0,232,.LM54-.LFBB6
+.LM54:
+	cpi r24,lo8(-122)
+	brlo .L63
+	.stabn	68,0,232,.LM55-.LFBB6
+.LM55:
+	rcall getch
+	rjmp .L63
+.L24:
+	.stabn	68,0,237,.LM56-.LFBB6
+.LM56:
+	cpi r24,lo8(65)
+	brne .L26
+	.stabn	68,0,238,.LM57-.LFBB6
 .LM57:
 	rcall getch
-	.stabn	68,0,222,.LM58-.LFBB6
+	.stabn	68,0,239,.LM58-.LFBB6
 .LM58:
-	cpi r24,lo8(-122)
-	brlo .L64
-	.stabn	68,0,222,.LM59-.LFBB6
-.LM59:
-	rcall getch
-	rjmp .L64
-.L25:
-	.stabn	68,0,227,.LM60-.LFBB6
-.LM60:
-	cpi r24,lo8(65)
-	brne .L27
-	.stabn	68,0,228,.LM61-.LFBB6
-.LM61:
-	rcall getch
-	.stabn	68,0,229,.LM62-.LFBB6
-.LM62:
 	cpi r24,lo8(-128)
-	brne .L28
-	.stabn	68,0,229,.LM63-.LFBB6
-.LM63:
+	brne .L27
+	.stabn	68,0,239,.LM59-.LFBB6
+.LM59:
 	ldi r24,lo8(2)
-	rjmp .L65
-.L28:
-	.stabn	68,0,230,.LM64-.LFBB6
-.LM64:
+	rjmp .L64
+.L27:
+	.stabn	68,0,240,.LM60-.LFBB6
+.LM60:
 	cpi r24,lo8(-127)
-	brne .L29
-	.stabn	68,0,230,.LM65-.LFBB6
-.LM65:
+	brne .L28
+	.stabn	68,0,240,.LM61-.LFBB6
+.LM61:
 	ldi r24,lo8(1)
-	rjmp .L65
-.L29:
-	.stabn	68,0,231,.LM66-.LFBB6
-.LM66:
+	rjmp .L64
+.L28:
+	.stabn	68,0,241,.LM62-.LFBB6
+.LM62:
 	cpi r24,lo8(-126)
 	breq .+2
-	rjmp .L67
-	.stabn	68,0,231,.LM67-.LFBB6
-.LM67:
-	ldi r24,lo8(18)
-	rjmp .L65
-.L27:
-	.stabn	68,0,237,.LM68-.LFBB6
-.LM68:
-	cpi r24,lo8(66)
-	brne .L31
-	.stabn	68,0,238,.LM69-.LFBB6
-.LM69:
-	ldi r24,lo8(20)
-.L66:
-	rcall getNch
-.L64:
-	.stabn	68,0,239,.LM70-.LFBB6
-.LM70:
-	rcall nothing_response
-	rjmp .L60
-.L31:
-	.stabn	68,0,243,.LM71-.LFBB6
-.LM71:
-	cpi r24,lo8(69)
-	brne .L32
-	.stabn	68,0,244,.LM72-.LFBB6
-.LM72:
-	ldi r24,lo8(5)
 	rjmp .L66
-.L32:
-	.stabn	68,0,249,.LM73-.LFBB6
-.LM73:
+	.stabn	68,0,241,.LM63-.LFBB6
+.LM63:
+	ldi r24,lo8(18)
+	rjmp .L64
+.L26:
+	.stabn	68,0,247,.LM64-.LFBB6
+.LM64:
+	cpi r24,lo8(66)
+	brne .L30
+	.stabn	68,0,248,.LM65-.LFBB6
+.LM65:
+	ldi r24,lo8(20)
+.L65:
+	rcall getNch
+.L63:
+	.stabn	68,0,249,.LM66-.LFBB6
+.LM66:
+	rcall nothing_response
+	rjmp .L59
+.L30:
+	.stabn	68,0,253,.LM67-.LFBB6
+.LM67:
+	cpi r24,lo8(69)
+	brne .L31
+	.stabn	68,0,254,.LM68-.LFBB6
+.LM68:
+	ldi r24,lo8(5)
+	rjmp .L65
+.L31:
+	.stabn	68,0,259,.LM69-.LFBB6
+.LM69:
 	cpi r24,lo8(80)
-	breq .L64
-.L33:
-	.stabn	68,0,256,.LM74-.LFBB6
-.LM74:
+	breq .L63
+.L32:
+	.stabn	68,0,266,.LM70-.LFBB6
+.LM70:
 	cpi r24,lo8(81)
-	breq .L64
-.L34:
-	.stabn	68,0,266,.LM75-.LFBB6
-.LM75:
+	breq .L63
+.L33:
+	.stabn	68,0,276,.LM71-.LFBB6
+.LM71:
 	cpi r24,lo8(82)
-	breq .L64
-.L35:
-	.stabn	68,0,273,.LM76-.LFBB6
-.LM76:
+	breq .L63
+.L34:
+	.stabn	68,0,283,.LM72-.LFBB6
+.LM72:
 	cpi r24,lo8(85)
-	brne .L36
-	.stabn	68,0,274,.LM77-.LFBB6
-.LM77:
+	brne .L35
+	.stabn	68,0,284,.LM73-.LFBB6
+.LM73:
 	rcall getch
 	sts address,r24
-	.stabn	68,0,275,.LM78-.LFBB6
-.LM78:
+	.stabn	68,0,285,.LM74-.LFBB6
+.LM74:
 	rcall getch
 	sts address+1,r24
-	rjmp .L64
-.L36:
-	.stabn	68,0,280,.LM79-.LFBB6
-.LM79:
+	rjmp .L63
+.L35:
+	.stabn	68,0,290,.LM75-.LFBB6
+.LM75:
 	cpi r24,lo8(86)
-	brne .L37
-	.stabn	68,0,281,.LM80-.LFBB6
-.LM80:
+	brne .L36
+	.stabn	68,0,291,.LM76-.LFBB6
+.LM76:
 	ldi r24,lo8(4)
 	rcall getNch
-	rjmp .L67
-.L37:
-	.stabn	68,0,286,.LM81-.LFBB6
-.LM81:
+	rjmp .L66
+.L36:
+	.stabn	68,0,296,.LM77-.LFBB6
+.LM77:
 	cpi r24,lo8(100)
 	breq .+2
-	rjmp .L38
-	.stabn	68,0,287,.LM82-.LFBB6
-.LM82:
+	rjmp .L37
+	.stabn	68,0,297,.LM78-.LFBB6
+.LM78:
 	rcall getch
 	sts length+1,r24
-	.stabn	68,0,288,.LM83-.LFBB6
-.LM83:
+	.stabn	68,0,298,.LM79-.LFBB6
+.LM79:
 	rcall getch
 	sts length,r24
-	.stabn	68,0,289,.LM84-.LFBB6
-.LM84:
+	.stabn	68,0,299,.LM80-.LFBB6
+.LM80:
 	lds r24,flags
 	andi r24,lo8(-2)
 	sts flags,r24
-	.stabn	68,0,290,.LM85-.LFBB6
-.LM85:
+	.stabn	68,0,300,.LM81-.LFBB6
+.LM81:
 	rcall getch
 	cpi r24,lo8(69)
-	brne .L39
-	.stabn	68,0,290,.LM86-.LFBB6
-.LM86:
+	brne .L38
+	.stabn	68,0,300,.LM82-.LFBB6
+.LM82:
 	lds r24,flags
 	ori r24,lo8(1)
 	sts flags,r24
-.L39:
+.L38:
 	ldi r19,lo8(buff)
 	mov r12,r19
 	ldi r19,hi8(buff)
 	mov r13,r19
-	.stabn	68,0,130,.LM87-.LFBB6
-.LM87:
+	.stabn	68,0,130,.LM83-.LFBB6
+.LM83:
 	movw r14,r12
 	ldi r16,lo8(0)
 	ldi r17,hi8(0)
-	rjmp .L40
-.L41:
-	.stabn	68,0,292,.LM88-.LFBB6
-.LM88:
+	rjmp .L39
+.L40:
+	.stabn	68,0,302,.LM84-.LFBB6
+.LM84:
 	rcall getch
 	movw r30,r14
 	st Z+,r24
 	movw r14,r30
-	.stabn	68,0,291,.LM89-.LFBB6
-.LM89:
+	.stabn	68,0,301,.LM85-.LFBB6
+.LM85:
 	subi r16,lo8(-(1))
 	sbci r17,hi8(-(1))
-.L40:
-	.stabn	68,0,291,.LM90-.LFBB6
-.LM90:
+.L39:
+	.stabn	68,0,301,.LM86-.LFBB6
+.LM86:
 	lds r24,length
 	lds r25,length+1
 	cp r16,r24
 	cpc r17,r25
-	brlo .L41
-	.stabn	68,0,294,.LM91-.LFBB6
-.LM91:
+	brlo .L40
+	.stabn	68,0,304,.LM87-.LFBB6
+.LM87:
 	rcall getch
 	cpi r24,lo8(32)
 	breq .+2
-	rjmp .L60
-	.stabn	68,0,295,.LM92-.LFBB6
-.LM92:
+	rjmp .L59
+	.stabn	68,0,305,.LM88-.LFBB6
+.LM88:
 	lds r24,flags
 	sbrc r24,0
-	rjmp .L56
-	rjmp .L69
-.L44:
-	.stabn	68,0,297,.LM93-.LFBB6
-.LM93:
+	rjmp .L55
+	rjmp .L68
+.L43:
+	.stabn	68,0,307,.LM89-.LFBB6
+.LM89:
 	movw r30,r12
 	ld r22,Z+
 	movw r12,r30
 	lds r24,address
 	lds r25,address+1
 	rcall __eewr_byte_m8
-	.stabn	68,0,298,.LM94-.LFBB6
-.LM94:
+	.stabn	68,0,308,.LM90-.LFBB6
+.LM90:
 	lds r24,address
 	lds r25,address+1
 	adiw r24,1
 	sts address+1,r25
 	sts address,r24
-	.stabn	68,0,296,.LM95-.LFBB6
-.LM95:
+	.stabn	68,0,306,.LM91-.LFBB6
+.LM91:
 	subi r16,lo8(-(1))
 	sbci r17,hi8(-(1))
-	rjmp .L42
-.L56:
-	.stabn	68,0,295,.LM96-.LFBB6
-.LM96:
+	rjmp .L41
+.L55:
+	.stabn	68,0,305,.LM92-.LFBB6
+.LM92:
 	ldi r16,lo8(0)
 	ldi r17,hi8(0)
-.L42:
-	.stabn	68,0,296,.LM97-.LFBB6
-.LM97:
+.L41:
+	.stabn	68,0,306,.LM93-.LFBB6
+.LM93:
 	lds r24,length
 	lds r25,length+1
 	cp r16,r24
 	cpc r17,r25
-	brlo .L44
-	rjmp .L45
-.L69:
-	.stabn	68,0,306,.LM98-.LFBB6
-.LM98:
+	brlo .L43
+	rjmp .L44
+.L68:
+	.stabn	68,0,316,.LM94-.LFBB6
+.LM94:
 /* #APP */
- ;  306 "ATmegaBOOT.c" 1
+ ;  316 "ATmegaBOOT.c" 1
 	cli
  ;  0 "" 2
 /* #NOAPP */
-.L46:
-	.stabn	68,0,307,.LM99-.LFBB6
-.LM99:
+.L45:
+	.stabn	68,0,317,.LM95-.LFBB6
+.LM95:
 	sbic 60-32,1
-	rjmp .L46
-	.stabn	68,0,308,.LM100-.LFBB6
-.LM100:
+	rjmp .L45
+	.stabn	68,0,318,.LM96-.LFBB6
+.LM96:
 /* #APP */
- ;  308 "ATmegaBOOT.c" 1
+ ;  318 "ATmegaBOOT.c" 1
 	clr	r17		
 	lds	r30,address	
 	lds	r31,address+1	
@@ -752,162 +733,162 @@ main:
 	
  ;  0 "" 2
 /* #NOAPP */
-.L45:
-	.stabn	68,0,404,.LM101-.LFBB6
-.LM101:
+.L44:
+	.stabn	68,0,414,.LM97-.LFBB6
+.LM97:
 	ldi r24,lo8(20)
-	rjmp .L62
-.L38:
-	.stabn	68,0,410,.LM102-.LFBB6
-.LM102:
+	rjmp .L61
+.L37:
+	.stabn	68,0,420,.LM98-.LFBB6
+.LM98:
 	cpi r24,lo8(116)
 	breq .+2
-	rjmp .L47
-	.stabn	68,0,411,.LM103-.LFBB6
-.LM103:
+	rjmp .L46
+	.stabn	68,0,421,.LM99-.LFBB6
+.LM99:
 	rcall getch
 	sts length+1,r24
-	.stabn	68,0,412,.LM104-.LFBB6
-.LM104:
+	.stabn	68,0,422,.LM100-.LFBB6
+.LM100:
 	rcall getch
 	sts length,r24
-	.stabn	68,0,413,.LM105-.LFBB6
-.LM105:
+	.stabn	68,0,423,.LM101-.LFBB6
+.LM101:
 	rcall getch
 	lds r25,flags
 	cpi r24,lo8(69)
-	brne .L48
-	.stabn	68,0,413,.LM106-.LFBB6
-.LM106:
+	brne .L47
+	.stabn	68,0,423,.LM102-.LFBB6
+.LM102:
 	ori r25,lo8(1)
 	sts flags,r25
-	rjmp .L49
-.L48:
-	.stabn	68,0,415,.LM107-.LFBB6
-.LM107:
+	rjmp .L48
+.L47:
+	.stabn	68,0,425,.LM103-.LFBB6
+.LM103:
 	andi r25,lo8(-2)
 	sts flags,r25
-	.stabn	68,0,416,.LM108-.LFBB6
-.LM108:
+	.stabn	68,0,426,.LM104-.LFBB6
+.LM104:
 	lds r24,address
 	lds r25,address+1
 	lsl r24
 	rol r25
 	sts address+1,r25
 	sts address,r24
-.L49:
-	.stabn	68,0,418,.LM109-.LFBB6
-.LM109:
+.L48:
+	.stabn	68,0,428,.LM105-.LFBB6
+.LM105:
 	rcall getch
 	cpi r24,lo8(32)
 	breq .+2
-	rjmp .L60
-	.stabn	68,0,419,.LM110-.LFBB6
-.LM110:
+	rjmp .L59
+	.stabn	68,0,429,.LM106-.LFBB6
+.LM106:
 	ldi r24,lo8(20)
 	rcall putch
-	.stabn	68,0,420,.LM111-.LFBB6
-.LM111:
+	.stabn	68,0,430,.LM107-.LFBB6
+.LM107:
 	ldi r16,lo8(0)
 	ldi r17,hi8(0)
-	rjmp .L50
-.L54:
-	.stabn	68,0,421,.LM112-.LFBB6
-.LM112:
+	rjmp .L49
+.L53:
+	.stabn	68,0,431,.LM108-.LFBB6
+.LM108:
 	lds r24,flags
 	sbrs r24,0
-	rjmp .L51
-	.stabn	68,0,422,.LM113-.LFBB6
-.LM113:
+	rjmp .L50
+	.stabn	68,0,432,.LM109-.LFBB6
+.LM109:
 	lds r24,address
 	lds r25,address+1
 	rcall __eerd_byte_m8
-	rjmp .L68
-.L51:
-	.stabn	68,0,425,.LM114-.LFBB6
-.LM114:
+	rjmp .L67
+.L50:
+	.stabn	68,0,435,.LM110-.LFBB6
+.LM110:
 	sbrc r24,1
-	rjmp .L53
-	.stabn	68,0,425,.LM115-.LFBB6
-.LM115:
+	rjmp .L52
+	.stabn	68,0,435,.LM111-.LFBB6
+.LM111:
 	lds r30,address
 	lds r31,address+1
 /* #APP */
- ;  425 "ATmegaBOOT.c" 1
+ ;  435 "ATmegaBOOT.c" 1
 	lpm r24, Z
 	
  ;  0 "" 2
 /* #NOAPP */
-.L68:
+.L67:
 	rcall putch
-.L53:
-	.stabn	68,0,426,.LM116-.LFBB6
-.LM116:
+.L52:
+	.stabn	68,0,436,.LM112-.LFBB6
+.LM112:
 	lds r24,address
 	lds r25,address+1
 	adiw r24,1
 	sts address+1,r25
 	sts address,r24
-	.stabn	68,0,420,.LM117-.LFBB6
-.LM117:
+	.stabn	68,0,430,.LM113-.LFBB6
+.LM113:
 	subi r16,lo8(-(1))
 	sbci r17,hi8(-(1))
-.L50:
-	.stabn	68,0,420,.LM118-.LFBB6
-.LM118:
+.L49:
+	.stabn	68,0,430,.LM114-.LFBB6
+.LM114:
 	lds r24,length
 	lds r25,length+1
 	cp r16,r24
 	cpc r17,r25
-	brlo .L54
-	rjmp .L63
-.L47:
-	.stabn	68,0,434,.LM119-.LFBB6
-.LM119:
+	brlo .L53
+	rjmp .L62
+.L46:
+	.stabn	68,0,444,.LM115-.LFBB6
+.LM115:
 	cpi r24,lo8(117)
-	brne .L55
-	.stabn	68,0,435,.LM120-.LFBB6
-.LM120:
+	brne .L54
+	.stabn	68,0,445,.LM116-.LFBB6
+.LM116:
 	rcall getch
 	cpi r24,lo8(32)
 	breq .+2
-	rjmp .L60
-	.stabn	68,0,436,.LM121-.LFBB6
-.LM121:
+	rjmp .L59
+	.stabn	68,0,446,.LM117-.LFBB6
+.LM117:
 	ldi r24,lo8(20)
 	rcall putch
-	.stabn	68,0,437,.LM122-.LFBB6
-.LM122:
+	.stabn	68,0,447,.LM118-.LFBB6
+.LM118:
 	ldi r24,lo8(30)
 	rcall putch
-	.stabn	68,0,438,.LM123-.LFBB6
-.LM123:
+	.stabn	68,0,448,.LM119-.LFBB6
+.LM119:
 	ldi r24,lo8(-109)
 	rcall putch
-	.stabn	68,0,439,.LM124-.LFBB6
-.LM124:
+	.stabn	68,0,449,.LM120-.LFBB6
+.LM120:
 	ldi r24,lo8(7)
-.L62:
+.L61:
 	rcall putch
-.L63:
-	.stabn	68,0,440,.LM125-.LFBB6
-.LM125:
+.L62:
+	.stabn	68,0,450,.LM121-.LFBB6
+.LM121:
 	ldi r24,lo8(16)
 	rcall putch
-	rjmp .L60
-.L55:
-	.stabn	68,0,445,.LM126-.LFBB6
-.LM126:
+	rjmp .L59
+.L54:
+	.stabn	68,0,455,.LM122-.LFBB6
+.LM122:
 	cpi r24,lo8(118)
 	breq .+2
-	rjmp .L60
-.L67:
-	.stabn	68,0,446,.LM127-.LFBB6
-.LM127:
+	rjmp .L59
+.L66:
+	.stabn	68,0,456,.LM123-.LFBB6
+.LM123:
 	ldi r24,lo8(0)
-.L65:
+.L64:
 	rcall byte_response
-	rjmp .L60
+	rjmp .L59
 	.size	main, .-main
 	.stabs	"ch:r(3,2)",64,0,131,24
 	.stabn	192,0,0,.LFBB6-.LFBB6

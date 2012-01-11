@@ -130,7 +130,7 @@ LOAD /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00001c00      0x3f4
+.text           0x00001c00      0x3e6
  *(.vectors)
  .vectors       0x00001c00       0x26 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/crtm8.o
                 0x00001c00                __vectors
@@ -205,35 +205,35 @@ LOAD /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a
                 0x00001c5c                __vector_10
                 0x00001c5c                __vector_16
                 0x00001c5c                __vector_18
- .text          0x00001c5e      0x368 ATmegaBOOT.o
+ .text          0x00001c5e      0x35a ATmegaBOOT.o
                 0x00001c5e                putch
                 0x00001c66                getch
                 0x00001cac                getNch
                 0x00001cc4                byte_response
                 0x00001cde                nothing_response
                 0x00001cee                main
- .text          0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
- .text          0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_copy_data.o)
- .text          0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_clear_bss.o)
- .text          0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
- .text          0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
-                0x00001fc6                . = ALIGN (0x2)
+ .text          0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
+ .text          0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_copy_data.o)
+ .text          0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_clear_bss.o)
+ .text          0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
+ .text          0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
+                0x00001fb8                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
- .text.libgcc   0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_copy_data.o)
- .text.libgcc   0x00001fc6        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_clear_bss.o)
+ .text.libgcc   0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
+ .text.libgcc   0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_copy_data.o)
+ .text.libgcc   0x00001fb8        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_clear_bss.o)
  .text.avr-libc
-                0x00001fc6       0x10 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
-                0x00001fc6                __eerd_byte_m8
+                0x00001fb8       0x10 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
+                0x00001fb8                __eerd_byte_m8
  .text.avr-libc
-                0x00001fd6       0x1a /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
-                0x00001fd6                __eewr_byte_m8
-                0x00001fd8                __eewr_r18_m8
-                0x00001ff0                . = ALIGN (0x2)
+                0x00001fc8       0x1a /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
+                0x00001fc8                __eewr_byte_m8
+                0x00001fca                __eewr_r18_m8
+                0x00001fe2                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00001ff0        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
-                0x00001ff0                exit
-                0x00001ff0                _exit
+ .fini9         0x00001fe2        0x0 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
+                0x00001fe2                exit
+                0x00001fe2                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -252,11 +252,11 @@ LOAD /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00001ff0        0x4 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
+ .fini0         0x00001fe2        0x4 /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a(_exit.o)
  *(.fini0)
-                0x00001ff4                _etext = .
+                0x00001fe6                _etext = .
 
-.data           0x00800060        0x2 load address 0x00001ff4
+.data           0x00800060        0x2 load address 0x00001fe6
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800060        0x0 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/crtm8.o
@@ -296,8 +296,8 @@ LOAD /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a
                 0x00800168                i
                 0x00800169                flags
                 0x0080016a                PROVIDE (__bss_end, .)
-                0x00001ff4                __data_load_start = LOADADDR (.data)
-                0x00001ff6                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00001fe6                __data_load_start = LOADADDR (.data)
+                0x00001fe8                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080016a        0x0
                 0x0080016a                PROVIDE (__noinit_start, .)
@@ -322,14 +322,14 @@ LOAD /usr/lib/gcc/avr/4.5.3/avr4/libgcc.a
 .signature
  *(.signature*)
 
-.stab           0x00000000     0x1464
+.stab           0x00000000     0x141c
  *(.stab)
  .stab          0x00000000      0x6cc /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/crtm8.o
- .stab          0x000006cc      0xc30 ATmegaBOOT.o
-                                0xc3c (size before relaxing)
- .stab          0x000012fc       0x90 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
+ .stab          0x000006cc      0xbe8 ATmegaBOOT.o
+                                0xbf4 (size before relaxing)
+ .stab          0x000012b4       0x90 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eerd_byte_atmega8.o)
                                  0x9c (size before relaxing)
- .stab          0x0000138c       0xd8 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
+ .stab          0x00001344       0xd8 /usr/lib/gcc/avr/4.5.3/../../../avr/lib/avr4/libc.a(eewr_byte_atmega8.o)
                                  0xe4 (size before relaxing)
 
 .stabstr        0x00000000      0xc40
