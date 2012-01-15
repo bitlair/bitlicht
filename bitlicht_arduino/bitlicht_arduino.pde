@@ -61,15 +61,12 @@ ISR(TIMER2_OVF_vect)
 }
 
 #define LIGHTNR 0
-#define REDCH   (LIGHTNR * 3)
-#define GREENCH (LIGHTNR * 3 + 1)
-#define BLUECH  (LIGHTNR * 3 + 2)
 
 void loop()
 {
   fade(); //little animation to annoy people
 
-  uint8_t i, channels;
+  uint8_t i, lights;
   uint16_t r, g, b;
 
   while(1)
@@ -77,35 +74,26 @@ void loop()
     WaitForPrefix();
 
     while (!Serial.available());
-    channels = Serial.read();
+    lights = Serial.read();
 
-    for (i = 0; i < channels; i++)
+    for (i = 0; i < lights; i++)
     {
-      if (i == REDCH)
+      if (i == LIGHTNR)
       {
-        r = ReadSerial();
-        r <<= 8;
-        r |= ReadSerial();
-      }
-      else if (i == GREENCH)
-      {
-        g = ReadSerial();
-        g <<= 8;
-        g |= ReadSerial();
-      }
-      else if (i == BLUECH)
-      {
-        b = ReadSerial();
-        b <<= 8;
-        b |= ReadSerial();
+        r = ReadChannel();
+        g = ReadChannel();
+        b = ReadChannel();
       }
       else
       {
-        ReadSerial();
-        ReadSerial();
+        ReadChannel();
+        ReadChannel();
+        ReadChannel();
       }
     }
+
     while(hasnewval);
+
     WriteRGBasync(r, g, b);
   }
 }
@@ -122,27 +110,32 @@ void WaitForPrefix()
   }
 }
 
-uint16_t ReadSerial()
+uint16_t ReadChannel()
 {
   while (!Serial.available());
-  return Serial.read();
+  uint16_t out = Serial.read();
+  out <<= 8;
+  while (!Serial.available());
+  out |= Serial.read();
+  return out;
 }
 
 void fade()
 {
-  for (uint16_t i = 0; i < 4096; i++)
+#define STEP 8
+  for (int16_t i = 0; i <= 4080; i += STEP)
     WriteRGB(i, 0, 0);
-  for (uint16_t i = 4095; i > 0; i--)
+  for (int16_t i = 4080; i > 0; i -= STEP)
     WriteRGB(i, 0, 0);
 
-  for (uint16_t i = 0; i < 4096; i++)
+  for (int16_t i = 0; i <= 4080; i += STEP)
     WriteRGB(0, i, 0);
-  for (uint16_t i = 4095; i > 0; i--)
+  for (int16_t i = 4080; i > 0; i -= STEP)
     WriteRGB(0, i, 0);
 
-  for (uint16_t i = 0; i < 4096; i++)
+  for (int16_t i = 0; i <= 4080; i += STEP)
     WriteRGB(0, 0, i);
-  for (uint16_t i = 4095; i > 0; i--)
+  for (int16_t i = 4080; i > 0; i -= STEP)
     WriteRGB(0, 0, i);
 
     WriteRGB(0, 0, 0);
