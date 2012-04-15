@@ -113,11 +113,10 @@ void WaitForPrefix()
 uint16_t ReadChannel()
 {
   while (!Serial.available());
-  uint16_t out = Serial.read();
-  out <<= 8;
+  //avr-gcc messes up the bitwise or with uint16_t
+  uint32_t out = Serial.read() << 8;
   while (!Serial.available());
-  out |= Serial.read();
-  return out;
+  return out | Serial.read();
 }
 
 void fade()
