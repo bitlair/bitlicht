@@ -22,7 +22,7 @@ DIRLIB = $(DIRAVR)/avr/lib
 MCU_TARGET = atmega8
 LDSECTION  = --section-start=.text=0x1c00
 
-FUSE_L     = 0xd4
+FUSE_L     = 0x14
 FUSE_H     = 0xca
 
 ISPFUSES    = avrdude -c $(ISPTOOL) -p $(MCU) -P $(ISPPORT) $(ISPSPEED) -e -u -U hfuse:w:$(FUSE_H):m -U lfuse:w:$(FUSE_L):m
