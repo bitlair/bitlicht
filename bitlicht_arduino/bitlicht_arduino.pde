@@ -22,7 +22,7 @@ void setup()
 
   sei();
 
-  Serial.begin(115200);
+  Serial.begin(38400);
 }
 
 volatile uint16_t newval;
